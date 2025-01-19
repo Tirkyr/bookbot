@@ -31,7 +31,8 @@ def get_text(path):
     
 
 def print_report(dict_words):
-    for key, value in dict_words.items():
+    sorted_dict = {k: v for k, v in sorted(dict_words.items(), key=lambda item: item[1], reverse=True)}
+    for key, value in sorted_dict.items():
         if key.isalpha():
             print(f"The '{key}' character was found {value} times")
 
